@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: exact-stingray-nodejs-gitops
+  description: This is GitOps manifest for exact-stingray-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: exact-stingray-nodejs
+    janus-idp.io/tekton: exact-stingray-nodejs 
+    backstage.io/kubernetes-id: exact-stingray-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:exact-stingray-nodejs
